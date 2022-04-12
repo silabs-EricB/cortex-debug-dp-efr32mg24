@@ -31,7 +31,7 @@ jobs:
           node-version: ${{ secrets.NODE_VERSION }}
 
       - name: Install packages
-        run: npm ci
+        run: rm -rf node_modules && yarn install --frozen-lockfile
 
       - name: Calculate version
         id: calculateVersion
